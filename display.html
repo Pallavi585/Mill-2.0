@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view</title>
+    <style>
+        p {
+            display: inline;
+        }
+
+        #griid {
+            display: flex;
+            font-size: 20px;
+        }
+
+        #left {
+            align-items: center;
+            width: 50%;
+            padding: 50px;
+        }
+
+        #right {
+            align-items: center;
+            width: 50%;
+            padding: 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        
+        <h1 align="center">
+            SSSV RICE MILL</h1>
+        <h3 align="center">
+            JUVVIGUDEM</h3>
+        
+       <h3 align="right">Rate: <p id="rate" align="left"></p></h3>
+       <p id="demo" align="center"></p>
+        <script>
+            const d = new Date();
+            document.getElementById("demo").innerHTML = d;
+        </script>
+       
+        <hr>
+        <div id="griid">
+            
+            <div id="left" align="left">
+                Sno :<p id="sno"></p><br>
+                Name :<p id="name"></p><br>
+                Village :<p id="vname"></p><br>
+                Gross Weight : <p id="gwgt"></p><br>
+                Bags : <p id="bags"></p><br>
+                Cuttings : <p id="cuttings"></p><br>
+                Net Weight : <p id="netweight"></p><br>
+                Total amount : <p id="totalamt"></p><br>
+            </div>
+            <div id="right" align="right"><br>
+                Hamali : <p id="hamali"></p><br>
+                Weigh Bridge : <p id="weightbridge"></p><br>
+                Gumasta : <p id="gumasta"></p><br>
+                Commission : <p id="commision"></p><br>
+                Total Cuttings : <p id="totalcuttings"></p><br>
+            </div>
+        </div>
+        <h3 align="center">Amount :<p id="amt"></p></h3>
+       
+        <h4 align="left">Incharge Signature:</h4>
+        <h4 align="right">Farmers Signature:</h4>
+    </div>
+
+    <p id="demo"></p>
+    </div>
+   <script src="scripts.js" type="module"></script>
+</body>
+
+</html>
