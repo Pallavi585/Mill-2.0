@@ -7,6 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>view</title>
     <style>
+        body {
+            margin: 0px;
+            overflow: hidden;
+            padding: 10px;
+        }
+
         p {
             display: inline;
         }
@@ -27,54 +33,172 @@
             width: 50%;
             padding: 50px;
         }
+
+        .last {
+            padding: 5px;
+        }
+
+        .last h4:first-of-type {
+            float: left;
+            padding-left: 0px;
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
-        
+
         <h1 align="center">
             SSSV RICE MILL</h1>
         <h3 align="center">
             JUVVIGUDEM</h3>
-        
-       <h3 align="right">Rate: <p id="rate" align="left"></p></h3>
-       <p id="demo" align="center"></p>
+        <h4 id="demo" align="center"></h4>
+        <table width=100%>
+            <tr>
+                <td>
+                    <h3>Sno :<p id="sno"></p><br></h3>
+                </td>
+                <td>
+                    <h3 align="right">Rate: <p id="rate"></p>
+                    </h3>
+                <td>
+            </tr>
+        </table>
+
         <script>
-            const d = new Date();
-            document.getElementById("demo").innerHTML = d;
+            window.addEventListener('load', () => {
+                name = localStorage.getItem("name");
+                rate = localStorage.getItem("rate");
+                sno = localStorage.getItem("sno");
+                village = localStorage.getItem("vlg")
+                gwgt = localStorage.getItem("gwgt");
+                commisionpercent = localStorage.getItem("Commission");
+                bags = gwgt / 70;
+                cuttings = bags * 1.5;
+                netweight = gwgt - cuttings;
+                hamali = bags * 8;
+                totalamt = netweight * rate;
+                commision = totalamt * commisionpercent / 100;
+                weightbridge = 60;
+                gumasta = 60;
+                totalcuttings = hamali + weightbridge + gumasta + commision;
+                amt = totalamt - totalcuttings;
+
+                const d = new Date();
+                document.getElementById("demo").innerHTML = d;
+                document.getElementById("sno").innerHTML = sno;
+                document.getElementById("rate").innerHTML = rate + " Rs";
+                document.getElementById("name").innerHTML = name;
+                document.getElementById("vname").innerHTML = village;
+                document.getElementById("gwgt").innerHTML = gwgt + " Kgs";
+                document.getElementById("bags").innerHTML = bags.toFixed(2);
+                document.getElementById("cuttings").innerHTML = cuttings.toFixed(2) + " Rs";
+                document.getElementById("netweight").innerHTML = netweight.toFixed(2) + " Kgs";
+                document.getElementById("totalamt").innerHTML = totalamt.toFixed(2) + " Rs";
+                document.getElementById("hamali").innerHTML = hamali.toFixed(2) + " Rs";
+                document.getElementById("weightbridge").innerHTML = weightbridge + " Kgs";
+                document.getElementById("gumasta").innerHTML = gumasta + " Rs";
+                document.getElementById("commision").innerHTML = commision.toFixed(2) + " Rs";
+                document.getElementById("totalcuttings").innerHTML = totalcuttings.toFixed(2) + " Rs";
+                document.getElementById("amt").innerHTML = amt.toFixed(2) + " Rgs";
+            })
         </script>
-       
+
         <hr>
         <div id="griid">
-            
+
             <div id="left" align="left">
-                Sno :<p id="sno"></p><br>
-                Name :<p id="name"></p><br>
-                Village :<p id="vname"></p><br>
-                Gross Weight : <p id="gwgt"></p><br>
-                Bags : <p id="bags"></p><br>
-                Cuttings : <p id="cuttings"></p><br>
-                Net Weight : <p id="netweight"></p><br>
-                Total amount : <p id="totalamt"></p><br>
+                <table border="0">
+
+                    <tr>
+                        <td>Name :</td>
+                        <td>
+                            <p id="name"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Village :</td>
+                        <td>
+                            <p id="vname"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gross Weight : </td>
+                        <td>
+                            <p id="gwgt"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bags : </td>
+                        <td>
+                            <p id="bags"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Cuttings : </td>
+                        <td>
+                            <p id="cuttings"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Net Weight : </td>
+                        <td>
+                            <p id="netweight"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Total amount : </td>
+                        <td>
+                            <p id="totalamt"></p><br>
+                        </td>
+                    </tr>
+                </table>
             </div>
             <div id="right" align="right"><br>
-                Hamali : <p id="hamali"></p><br>
-                Weigh Bridge : <p id="weightbridge"></p><br>
-                Gumasta : <p id="gumasta"></p><br>
-                Commission : <p id="commision"></p><br>
-                Total Cuttings : <p id="totalcuttings"></p><br>
+                <table border="0">
+                    <tr>
+                        <td>Hamali : </td>
+                        <td>
+                            <p id="hamali"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Weigh Bridge : </td>
+                        <td>
+                            <p id="weightbridge"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gumasta : </td>
+                        <td>
+                            <p id="gumasta"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Commission : </td>
+                        <td>
+                            <p id="commision"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Total Cuttings : </td>
+                        <td>
+                            <p id="totalcuttings"></p><br>
+                        </td>
+                    </tr>
+                </table>
             </div>
         </div>
-        <h3 align="center">Amount :<p id="amt"></p></h3>
-       
-        <h4 align="left">Incharge Signature:</h4>
-        <h4 align="right">Farmers Signature:</h4>
+        <h3 align="center">Amount :<p id="amt"></p>
+        </h3>
+        <div class="last">
+            <h4 align="left">Incharge Signature:</h4>
+            <h4 align="right">Farmers Signature:</h4>
+        </div>
     </div>
 
     <p id="demo"></p>
     </div>
-   <script src="scripts.js" type="module"></script>
 </body>
 
 </html>
