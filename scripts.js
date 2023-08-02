@@ -37,7 +37,7 @@ function addstudent(){
     document.write("<h4 align=left>"+"Village Name: "+village+"</h4>");
     document.write("<h4 align=left>"+"Gross Weight: "+gwgt+" kgs"+"</h4>");
     document.write("<h4 align=left>"+"Bags: "+bags+"</h4>");
-    document.write("<h4 align=left>"+"Cuttings: "+cuttings.toFixed(4)+" Rs"+"</h4>");
+    document.write("<h4 align=left>"+"Cuttings: "+cuttings.toFixed(4)+"wt"+"</h4>");
     document.write("<h4 align=left>"+"Net Weight: "+netweight+" kgs"+"</h4>");
     document.write("<h4 align=left>"+"Rate: "+rate+" Rs"+"</h4>");
     document.write(`<h4 align=left>Total Amount: ${totalamt} Rs</h4></table>`);
